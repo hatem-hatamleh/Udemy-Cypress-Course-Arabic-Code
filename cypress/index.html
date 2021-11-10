@@ -74,6 +74,7 @@
 
 <body>
     <h1 id="welcome">Welcome to Cypress Tutorials</h1>
+    <a class="about" href="./about.html">Go to About Page</a>
     <h2>We will use this website to learn cypress commands</h2>
     <hr />
     <p>The available list of courses</p>
@@ -303,12 +304,16 @@
 
           <hr>
           <h1>Focus and Blur</h1>
-          <input type="text" onfocus="this.style.backgroundColor='red'" onblur="this.style.backgroundColor='blue'">
+          <input class="focus blur" type="text" onfocus="this.style.backgroundColor='red'" onblur="this.style.backgroundColor='blue'">
 
 
           <hr>
           <h1>Trigger playground</h1>
-          <input value="Trigger" type="button" class="btn btn-primary trigger-button" onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='blue'" onmousedown="this.value='long press'" onmouseup="this.value='Trigger'" style="background-color: blue" />
+          <input class="trigger" value="Trigger" type="button" class="btn btn-primary trigger-button" onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='blue'" onmousedown="this.value='long press'" onmouseup="this.value='Trigger'" style="background-color: black" />
+
+          <hr>
+          <h1>Current Time</h1>
+          <p id="date"></p>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -346,6 +351,15 @@
                         .dataTransfer
                         .clearData();
                 }
+
+                document.cookie = "name=qacart"
+                document.cookie = "course=cypress"
+
+                n =  new Date();
+                y = n.getFullYear();
+                m = n.getMonth() + 1;
+                d = n.getDate();
+                document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
             </script>
 </body>
 
